@@ -8,17 +8,17 @@ import AddCol from "./add-col";
 
 const App = () => {
   const [datas, setdatas] = useState([]);
-  const create = "http://localhost:4000/user/users";
+  const url = "http://localhost:4000/user/users/";
  
   useEffect(() => {
-    axios.get("http://localhost:4000/user/users").then(({ data }) => {
+    axios.get(url).then(({ data }) => {
       setdatas(data);
-      console.log(datas);
+      // console.log(datas);
     })
     .catch((error) => {
       console.log(error);
     });
-  }, []);
+  }, [datas]);
 
   
 
@@ -26,9 +26,11 @@ const App = () => {
   
   if(datas.length !== 0 ){
     return (
-      <div><AddCol TableData={datas} url={create}/>,
-      <DynamicTable TableData={datas}/></div>
-      
+      <div>
+        <AddCol TableData={datas} url={url}/>
+      <br />
+      <DynamicTable TableData={datas} url={url}/>
+      </div>
     );
   }
   else{

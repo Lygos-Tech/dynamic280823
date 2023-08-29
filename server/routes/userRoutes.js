@@ -38,4 +38,34 @@ UserSchema.findByIdAndRemove(
     
 });
 
+
+// UPDATE student
+router
+.route("/users/:id")
+// Get Single Student
+.get((req, res,next) => {
+	UserSchema.findById
+		(req.params.id).then((result) => {
+            res.json(result);
+        })
+        .catch((err)=>{
+            next(err);
+        })
+})
+
+// Update Student Data
+.put((req, res, next) => {
+	UserSchema.findByIdAndUpdate(
+	req.params.id,
+	{
+		$set: req.body,
+	}).then((result) => {
+        res.json(result);
+		console.log("data updated successfully !");
+    })
+    .catch((err)=>{
+        next(err);
+    })
+});
+
 module.exports = router;
