@@ -1,43 +1,29 @@
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import DynamicTable from "./dynamic-table/DynamicTable";
-import axios from "axios";
-import { Component } from "react";
-import "./App.css";
-import React, { useState, useEffect } from "react";
-import AddCol from "./add-col";
+import React from "react";
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Home from './pages/home';
+import Admin from "./pages/admin";
+// import Login from './pages/login';
+// import {Toaster} from 'react-hot-toast'
+import "bootstrap/dist/css/bootstrap.css";
 
 const App = () => {
-  const [datas, setdatas] = useState([]);
-  const url = "http://localhost:4000/user/users/";
- 
-  useEffect(() => {
-    axios.get(url).then(({ data }) => {
-      setdatas(data);
-      // console.log(datas);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  }, [datas]);
-
   
-
-
-  
-  if(datas.length !== 0 ){
-    return (
-      <div>
-        <AddCol TableData={datas} url={url}/>
-      <br />
-      <DynamicTable TableData={datas} url={url}/>
-      </div>
-    );
-  }
-  else{
-    return(
-      "no data found"
-    );
-  }
+  return (
+		<>
+		{/* <Toaster position='bottom-right' toastOptions={{duration: 5000}} /> */}
+		<Router>
+		<Routes>
+		  <Route>
+			{/* <Route path='/' element={<Login />} />
+			<Route path='/login' element={<Login />} />
+			<Route path='/home' element={<Home />} /> */}
+			<Route path='/admin' element={<Admin />} />
+		  </Route>
+		</Routes>
+		</Router>
+		</>
+	  )
   
   
 }

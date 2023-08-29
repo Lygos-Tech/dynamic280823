@@ -62,7 +62,6 @@ if(ready){
         })}
         <button onClick={submit}>Submit</button>
       </form>
-       
   )
     }
     else{

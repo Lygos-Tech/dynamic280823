@@ -5,8 +5,11 @@ let CompanySchema = new Schema({
 name: {
 	type: String
 },
-no: {
+id: {
 	type: Number
+},
+cid: {
+	type: String
 }
 }, {
 	collection: 'Companies'

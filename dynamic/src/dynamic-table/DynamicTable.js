@@ -21,6 +21,8 @@ function DynamicTable({ TableData ,url}) {
 
   // get table column names
   const column = Object.keys(TableData[0]);
+  column.shift();
+  column.pop();
 
   // get table heading data
   const ThData = () => {
@@ -33,6 +35,7 @@ function DynamicTable({ TableData ,url}) {
 
   //handle delete function
   const deleteUser = (_id) => {
+    console.log(_id)
     axios
     .delete(
   url + _id)
@@ -56,6 +59,7 @@ function DynamicTable({ TableData ,url}) {
   const updateUser = (_id,data) => {
     console.log("updated",data)
     console.log("updated",_id)
+    setedit(false);
     axios
 	.put(
 		url +
@@ -91,9 +95,10 @@ function DynamicTable({ TableData ,url}) {
             !edit === true?<td>
             <button onClick={() => setedit(true)}>Edit</button>
           </td>:<><td>
-                <button  onClick={() => handleCancel()}>cancel</button>
-
-              </td><td>
+                <button  onClick={() => handleCancel()}>Cancel</button>
+                
+              </td>
+              <td>
                   <button onClick={() => updateUser(data._id, obj[index])}>Confirm</button>
                 </td></>
           }
@@ -114,7 +119,7 @@ function DynamicTable({ TableData ,url}) {
         <thead>
           <tr >
             {ThData()}
-            <th>Action</th>
+            <th>Acitons</th>
           </tr>
         </thead>
         <tbody>

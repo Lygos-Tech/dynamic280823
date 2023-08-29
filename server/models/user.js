@@ -1,8 +1,10 @@
-const { Int32 } = require('mongodb');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let UserSchema = new Schema({
+id: {
+	type: Number
+},
 name: {
 	type: String
 },
@@ -11,9 +13,6 @@ email: {
 },
 password: {
 	type: String
-},
-naaaa: {
-	type: Number
 },
 username: {
 	type: String
