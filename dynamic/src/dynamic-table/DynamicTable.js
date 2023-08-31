@@ -41,7 +41,7 @@ function DynamicTable({ TableData ,url}) {
   url + _id)
     .then((res) => {
       if (res.status === 200) {
-      alert("User successfully deleted");
+      // alert("User successfully deleted");
       window.location.reload();
       } else Promise.reject();
     })

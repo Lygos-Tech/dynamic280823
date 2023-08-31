@@ -7,7 +7,7 @@ let dbConfig = require('./database/db');
 // Express Route
 const userRoute = require('../server/routes/userRoutes')
 const companyRoute = require('../server/routes/companyRoutes')
-// const categoryRoute = require('../server/routes/categoryRoutes')
+const categoryRoute = require('../server/routes/categoryRoutes')
 
 
 // Connecting MongoDB Database
@@ -28,7 +28,7 @@ extended: true
 app.use(cors());
 app.use('/user', userRoute);
 app.use('/company', companyRoute);
-// app.use('/categories', categoryRoute);
+app.use('/category', categoryRoute);
 
 
 

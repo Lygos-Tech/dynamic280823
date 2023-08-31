@@ -1,0 +1,21 @@
+.table-container{
+    width:100%;
+    height:100%;
+    overflow-x:scroll;
+   }
+
+   .column {
+    float: left;
+    width: 50%;
+    height: 10%;
+    overflow-x:scroll;
+
+    }
+
+    .row {
+        width: 95%;
+        height: 400px;
+        overflow-x:scroll;
+        box-sizing: border-box;
+        border: 2px solid gray;
+}
