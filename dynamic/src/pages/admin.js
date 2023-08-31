@@ -62,6 +62,7 @@ function Admin() {
                     <h3>User Table</h3>
                     <div class='row'>
                     <div className='table-container'>
+                        <br />
                         <AddCol TableData={datas} url={url} />
                         <br />
                         <DynamicTable TableData={datas} url={url} />
@@ -71,6 +72,7 @@ function Admin() {
                     <h3>Category Table</h3>
                     <div class='row'>
                     <div className='table-container'>
+                        <br />
                         <AddCol TableData={datas3} url={url3} />
                         <br />
                         <DynamicTable TableData={datas3} url={url3} />
@@ -82,6 +84,7 @@ function Admin() {
                 <h3>Company Table</h3>
                     <div class='row'>
                     <div className='table-container'>
+                        <br />
                         <AddCol TableData={datas2} url={url2} />
                         <br />
                         <DynamicTable TableData={datas2} url={url2} />
